@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Todo from './todo';
 import AddTodo from './addtodo';
+import './todo.css'
 
 
 class Todos extends Component {
@@ -64,7 +65,7 @@ class Todos extends Component {
 
     render() {
         return (
-            <table className="table">
+            <table className="table " style={{border:"1px solid lightgrey" }}>
                 <tbody>
                 <tr>
                         <td colSpan="4" className="text-center">
@@ -72,7 +73,7 @@ class Todos extends Component {
                         </td>
                     </tr>
                     {this.state.todos.map((todo, index) => (
-                        <tr key={todo.id}>
+                        <tr key={todo.id} >
                             <Todo index={index+1} todo={todo} fooDelete={this.handleDelete} fooDoneDone={this.handleDone} />
                         </tr>
                     ))}
