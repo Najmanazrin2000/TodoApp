@@ -66,16 +66,17 @@ class Todos extends Component {
         return (
             <table className="table">
                 <tbody>
+                <tr>
+                        <td colSpan="4" className="text-center">
+                            <AddTodo fooAddTodo={this.addNewTodo} addTodoValue={this.state.addTodoValue} />
+                        </td>
+                    </tr>
                     {this.state.todos.map((todo, index) => (
                         <tr key={todo.id}>
                             <Todo index={index+1} todo={todo} fooDelete={this.handleDelete} fooDoneDone={this.handleDone} />
                         </tr>
                     ))}
-                    <tr>
-                        <td colSpan="4" className="text-center">
-                            <AddTodo fooAddTodo={this.addNewTodo} addTodoValue={this.state.addTodoValue} />
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
         );
